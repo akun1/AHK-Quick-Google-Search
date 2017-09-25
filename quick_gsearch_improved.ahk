@@ -9,7 +9,7 @@ SetWorkingDir %A_ScriptDir%
 	tamu_email_key = tamu
 	gmail_key = gm
 
-
+#IfWinNotActive, Quick Search
 <^Space::
 
 ;gui layout
@@ -21,13 +21,14 @@ SetWorkingDir %A_ScriptDir%
 	Gui, Add, Button, default y+2 w500 h35 gExecuteSearch, Go
 	Gui, Add, Text, center w500, %MyDate%
 	Gui, Add, Text, center w500, %MyTime%
-	Gui, Show, w500 h215, Quick_Search
+	Gui, Show, w500 h215, Quick Search
 ;----------------------------------------	
 	Return
 
 
 ;labels
 ;----------------------------------------
+
 
 ExecuteSearch:
 Gui, Submit
