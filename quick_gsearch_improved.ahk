@@ -6,7 +6,7 @@ SetWorkingDir %A_ScriptDir%
 
 
 	py_key = py
-	tamu_email_key = tamu
+	tamu_email_key = t
 	gmail_key = gm
 
 #IfWinNotActive, Quick Search
@@ -15,7 +15,7 @@ SetWorkingDir %A_ScriptDir%
 ;gui layout
 ;----------------------------------------
 	FormatTime, MyTime,, dddd - MMMM d, yyyy
-	FormatTime, MyDate,, hh:mm:ss tt
+	FormatTime, MyDate,, h:mm tt
 	Gui, Font, s22 cRed
 	Gui, Add, Edit, x0 y0 w500 vUserInput,
 	Gui, Add, Button, default y+2 w500 h35 gExecuteSearch, Go
@@ -53,7 +53,9 @@ if %UserInput%
 	}
 	else
 	{
-		Run, https://www.google.com/#q=%UserInput%
+		Run, https://www.google.com/search?source=hp&q=%UserInput%
+		Sleep 1750
+		Click 500,422
 		Gui, Destroy
 	}
 }
